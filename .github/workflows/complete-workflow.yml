@@ -14,7 +14,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven cloud
-      run:  mvn -B verify sonar:sonar -Dsonar.projectKey=javaprojectreachability1 -Dsonar.organization=javaprojectreachability2 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+      run:  mvn -B verify sonar:sonar -Dsonar.projectKey=javaprojectreachability0 -Dsonar.organization=javaprojectreachability10 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -35,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: main
+          ref: master
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.6.1
         with:
